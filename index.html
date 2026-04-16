@@ -24,12 +24,8 @@
  --fb:'DM Sans',sans-serif;
 }
 html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:var(--fb);overflow-x:hidden;font-weight:300;cursor:none;}
+body{background:var(--black);color:var(--white);font-family:var(--fb);overflow-x:hidden;font-weight:300;}
 
-/* ── CUSTOM CURSOR ── */
-.cursor{position:fixed;width:12px;height:12px;background:var(--amber);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .2s;}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(245,166,35,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s;transition-timing-function:ease-out;}
-body:hover .cursor{opacity:1;}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 4rem;transition:background .4s,padding .3s;}
@@ -37,11 +33,11 @@ nav.scrolled{background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);padding:1
 .nav-logo{font-family:var(--fd);font-size:1.8rem;letter-spacing:0.06em;color:var(--white);text-decoration:none;line-height:1;}
 .nav-logo span{color:var(--amber);}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
-.nav-links a{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;font-weight:400;}
+.nav-links a{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);text-decoration:none;transition:color .2s;font-weight:400;text-shadow:0 1px 6px rgba(0,0,0,0.7);}
 .nav-links a:hover{color:var(--amber);}
 .nav-cta{font-family:var(--fb);font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:0.7rem 1.8rem;background:var(--amber);color:var(--black);text-decoration:none;transition:background .2s,transform .2s;}
 .nav-cta:hover{background:#ffb83f;transform:translateY(-1px);}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:4px;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:transform .25s,opacity .25s;}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
@@ -87,7 +83,7 @@ h1.hero-h1 em{font-style:normal;color:var(--amber);}
 .menu-header h2{font-family:var(--fd);font-size:clamp(3rem,6vw,6rem);line-height:0.9;letter-spacing:0.04em;color:var(--white);}
 .menu-header h2 em{font-style:normal;color:var(--amber);}
 .menu-nav{display:flex;gap:0.5rem;flex-wrap:wrap;padding:0 4rem;margin-bottom:2.5rem;}
-.menu-tab{font-family:var(--fb);font-size:0.68rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:0.55rem 1.4rem;border:1px solid var(--border);color:var(--muted);background:none;cursor:none;transition:all .2s;}
+.menu-tab{font-family:var(--fb);font-size:0.68rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:0.55rem 1.4rem;border:1px solid var(--border);color:var(--muted);background:none;cursor:pointer;transition:all .2s;}
 .menu-tab.active,.menu-tab:hover{border-color:var(--amber);color:var(--amber);}
 /* Horizontal scrolling menu cards */
 .menu-strip{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding:0 4rem 2rem;cursor:grab;}
@@ -169,7 +165,7 @@ h1.hero-h1 em{font-style:normal;color:var(--amber);}
 .fg select{appearance:none;}
 .fg select option{background:var(--off);}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
-.btn-submit{font-family:var(--fd);font-size:1.4rem;letter-spacing:0.1em;padding:1.2rem 3rem;background:var(--amber);color:var(--black);border:none;cursor:none;transition:background .2s,transform .2s;align-self:flex-start;margin-top:0.5rem;}
+.btn-submit{font-family:var(--fd);font-size:1.4rem;letter-spacing:0.1em;padding:1.2rem 3rem;background:var(--amber);color:var(--black);border:none;cursor:pointer;transition:background .2s,transform .2s;align-self:flex-start;margin-top:0.5rem;}
 .btn-submit:hover{background:#ffb83f;transform:translateY(-2px);}
 
 /* ── FOOTER ── */
@@ -193,8 +189,8 @@ footer p a:hover{color:var(--amber);}
 #cookie-banner.show{transform:translateY(0);}
 .ck-text{font-size:0.74rem;color:rgba(255,255,255,0.6);line-height:1.7;max-width:680px;}
 .ck-btns{display:flex;gap:.7rem;flex-shrink:0;}
-.ck-acc{font-family:var(--fb);font-size:0.6rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.6rem 1.3rem;background:var(--amber);color:var(--black);border:none;cursor:none;white-space:nowrap;}
-.ck-rej{font-family:var(--fb);font-size:0.6rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;padding:.6rem 1.3rem;background:transparent;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,.15);cursor:none;white-space:nowrap;}
+.ck-acc{font-family:var(--fb);font-size:0.6rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.6rem 1.3rem;background:var(--amber);color:var(--black);border:none;cursor:pointer;white-space:nowrap;}
+.ck-rej{font-family:var(--fb);font-size:0.6rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;padding:.6rem 1.3rem;background:transparent;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,.15);cursor:pointer;white-space:nowrap;}
 
 /* ── REVEALS ── */
 .rev{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
@@ -241,7 +237,7 @@ footer p a:hover{color:var(--amber);}
 .order-modal::-webkit-scrollbar-thumb{background:var(--amber);}
 .om-header{background:var(--amber);padding:1.8rem 2rem;display:flex;justify-content:space-between;align-items:center;}
 .om-header h3{font-family:var(--fd);font-size:2rem;letter-spacing:0.08em;color:var(--black);}
-.om-close{background:none;border:none;font-size:1.8rem;color:var(--black);cursor:none;line-height:1;padding:0;}
+.om-close{background:none;border:none;font-size:1.8rem;color:var(--black);cursor:pointer;line-height:1;padding:0;}
 .om-body{padding:1.5rem 2rem;}
 .om-section-title{font-family:var(--fd);font-size:1.1rem;letter-spacing:0.15em;color:var(--amber);margin:1.5rem 0 0.8rem;border-bottom:1px solid var(--border);padding-bottom:0.5rem;}
 .om-item{display:flex;justify-content:space-between;align-items:center;padding:0.9rem 0;border-bottom:1px solid var(--border);}
@@ -252,16 +248,16 @@ footer p a:hover{color:var(--amber);}
 .om-item-right{display:flex;align-items:center;gap:1rem;margin-left:1rem;}
 .om-price{font-family:var(--fd);font-size:1.1rem;color:var(--amber);white-space:nowrap;}
 .om-qty{display:flex;align-items:center;gap:0.5rem;}
-.om-qty button{width:28px;height:28px;background:var(--gray2);border:1px solid var(--border);color:var(--white);font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:none;transition:background .2s;}
+.om-qty button{width:28px;height:28px;background:var(--gray2);border:1px solid var(--border);color:var(--white);font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
 .om-qty button:hover{background:var(--amber);color:var(--black);border-color:var(--amber);}
 .om-qty span{font-family:var(--fd);font-size:1.1rem;min-width:20px;text-align:center;}
 .om-footer{position:sticky;bottom:0;background:var(--gray);padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
 .om-total-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);}
 .om-total-val{font-family:var(--fd);font-size:2rem;color:var(--amber);}
-.om-confirm{font-family:var(--fd);font-size:1.2rem;letter-spacing:0.1em;padding:0.9rem 2.5rem;background:var(--amber);color:var(--black);border:none;cursor:none;transition:background .2s;}
+.om-confirm{font-family:var(--fd);font-size:1.2rem;letter-spacing:0.1em;padding:0.9rem 2.5rem;background:var(--amber);color:var(--black);border:none;cursor:pointer;transition:background .2s;}
 .om-confirm:hover{background:#ffb83f;}
 .om-delivery-row{display:flex;gap:1rem;margin-bottom:0.5rem;}
-.om-delivery-btn{flex:1;padding:0.7rem;border:1px solid var(--border);background:none;color:var(--muted);font-family:var(--fd);font-size:0.95rem;letter-spacing:0.1em;cursor:none;transition:all .2s;}
+.om-delivery-btn{flex:1;padding:0.7rem;border:1px solid var(--border);background:none;color:var(--muted);font-family:var(--fd);font-size:0.95rem;letter-spacing:0.1em;cursor:pointer;transition:all .2s;}
 .om-delivery-btn.active,.om-delivery-btn:hover{border-color:var(--amber);color:var(--amber);}
 .om-obs input{width:100%;background:none;border:none;border-bottom:1px solid var(--border);color:var(--white);padding:0.6rem 0;font-family:var(--fb);font-size:0.9rem;outline:none;margin-top:0.5rem;}
 .om-obs input::placeholder{color:rgba(255,255,255,0.2);}
@@ -273,8 +269,7 @@ footer p a:hover{color:var(--amber);}
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+
 
 <!-- NAV -->
 <nav id="nav">
@@ -488,7 +483,7 @@ footer p a:hover{color:var(--amber);}
  <div class="story-content rev-l">
  <div class="sec-label">Nossa História</div>
  <h2>FEITO COM<br><em>OBSESSÃO.</em></h2>
- <p>Começou com uma pergunta simples: <strong>por que o melhor burger artesanal de SP não existia ainda?</strong>Em 2019, decidimos mudar isso.</p>
+ <p>Começou com uma pergunta simples: <strong>por que o melhor burger artesanal de SP não existia ainda?</strong> Em 2019, decidimos mudar isso.</p>
  <p>Cada detalhe importa. O pão brioche vem da padaria da esquina. A carne é moída diariamente. O molho especial BORA levou 6 meses para ficar perfeito.</p>
  <div class="story-stats">
  <div><div class="sstat-n">50+</div><div class="sstat-l">Itens no menu</div></div>
@@ -742,15 +737,6 @@ footer p a:hover{color:var(--amber);}
 </div>
 
 <script>
-// Custom cursor
-var cursor = document.getElementById('cursor');
-var ring = document.getElementById('cursorRing');
-document.addEventListener('mousemove', function(e) {
- cursor.style.left = e.clientX + 'px';
- cursor.style.top = e.clientY + 'px';
- setTimeout(function(){ ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 80);
-});
-
 // Nav scroll
 window.addEventListener('scroll', function() {
  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
@@ -887,7 +873,7 @@ function confirmOrder() {
  var total = document.getElementById('omTotal').textContent;
  if (total === 'R$ 0') { alert('Adicione pelo menos um item ao pedido!'); return; }
  var modal = document.getElementById('orderModal');
- modal.innerHTML = '<div style="padding:4rem 2rem;text-align:center;"><div style="font-family:var(--fd);font-size:4rem;color:var(--amber);letter-spacing:0.06em;margin-bottom:1rem;">PEDIDO<br>RECEBIDO!</div><div style="font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;">Seu pedido de <strong style=\"color:var(--amber)\">' + total + '</strong> foi recebido.<br>Em breve entraremos em contato para confirmar.<br>Tempo estimado: <strong style=\"color:var(--white)\">25–35 minutos</strong></div><button onclick="closeOrder()" style="font-family:var(--fd);font-size:1.2rem;letter-spacing:0.1em;padding:0.9rem 2.5rem;background:var(--amber);color:var(--black);border:none;cursor:none;">FECHAR</button></div>';
+ modal.innerHTML = '<div style="padding:4rem 2rem;text-align:center;"><div style="font-family:var(--fd);font-size:4rem;color:var(--amber);letter-spacing:0.06em;margin-bottom:1rem;">PEDIDO<br>RECEBIDO!</div><div style="font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;">Seu pedido de <strong style=\"color:var(--amber)\">' + total + '</strong> foi recebido.<br>Em breve entraremos em contato para confirmar.<br>Tempo estimado: <strong style=\"color:var(--white)\">25–35 minutos</strong></div><button onclick="closeOrder()" style="font-family:var(--fd);font-size:1.2rem;letter-spacing:0.1em;padding:0.9rem 2.5rem;background:var(--amber);color:var(--black);border:none;cursor:pointer;">FECHAR</button></div>';
 }
 // Close with Escape key
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeOrder(); });
